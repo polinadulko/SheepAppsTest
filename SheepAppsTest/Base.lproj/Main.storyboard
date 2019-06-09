@@ -25,6 +25,12 @@
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Can't load news" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayu-uh-IED">
+                                <rect key="frame" x="50" y="333.5" width="275" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="14b-IR-QjP">
                                 <rect key="frame" x="0.0" y="76" width="375" height="591"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -72,17 +78,22 @@
                         <constraints>
                             <constraint firstItem="14b-IR-QjP" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="15t-hb-1Fe"/>
                             <constraint firstItem="14b-IR-QjP" firstAttribute="top" secondItem="ufP-aU-B8S" secondAttribute="bottom" id="N8e-V7-kiO"/>
+                            <constraint firstItem="ayu-uh-IED" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="RkV-GB-JKT"/>
                             <constraint firstItem="ufP-aU-B8S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WJc-h9-UiJ"/>
                             <constraint firstItem="ufP-aU-B8S" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="XSL-7Y-M1c"/>
                             <constraint firstItem="ufP-aU-B8S" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="aBh-S3-Kdb"/>
                             <constraint firstItem="14b-IR-QjP" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="hMq-d7-827"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ayu-uh-IED" secondAttribute="trailing" constant="50" id="ihO-Fg-6PA"/>
+                            <constraint firstItem="ayu-uh-IED" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="j1b-Kk-ztF"/>
                             <constraint firstItem="14b-IR-QjP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jFe-vd-EIi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="ITT-KW-ZFc"/>
                     <connections>
+                        <outlet property="errorLabel" destination="ayu-uh-IED" id="mMO-Lx-GB3"/>
                         <outlet property="newsTableView" destination="14b-IR-QjP" id="K1x-Sf-9IA"/>
+                        <outlet property="searchBar" destination="ufP-aU-B8S" id="v5s-ta-Dyu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

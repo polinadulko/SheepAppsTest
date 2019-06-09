@@ -11,6 +11,10 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var newsTableView: UITableView!
     let newsCellReuseIdentifier = "NewsCell"
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var errorLabel: UILabel!
+    let errorText = "Can't load news"
+    let noInternetErrorCode = -1009
     var news: [Article]?
     
     override func viewDidLoad() {
@@ -26,18 +30,31 @@ class ViewController: UIViewController {
             if getNewsOperation.didFinishWithError == false, let news = getNewsOperation.news {
                 self.news = news.articles
                 DispatchQueue.main.async {
-                    self.newsTableView.reloadData()
+                    self.showTableWithNews()
                 }
             } else {
-                let getNewsErrorText = "Error of loading news"
-                if let errorCode = getNewsOperation.errorCode {
-                    NSLog("%@ (code = %d)", getNewsErrorText, errorCode)
-                } else {
-                    NSLog(getNewsErrorText)
+                DispatchQueue.main.async {
+                    self.showErrorLabel(errorCode: getNewsOperation.errorCode)
                 }
             }
         }
         operationQueue.addOperation(getNewsOperation)
+    }
+    
+    func showTableWithNews() {
+        self.newsTableView.isHidden = false
+        self.searchBar.isUserInteractionEnabled = true
+        self.newsTableView.reloadData()
+    }
+    
+    func showErrorLabel(errorCode: Int?) {
+        self.newsTableView.isHidden = true
+        self.searchBar.isUserInteractionEnabled = false
+        if let errorCode = errorCode, errorCode == self.noInternetErrorCode {
+            self.errorLabel.text = self.errorText + ". There is no Internet connection"
+        } else {
+            self.errorLabel.text = self.errorText
+        }
     }
 }
 

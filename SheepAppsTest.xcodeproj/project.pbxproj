@@ -68,8 +68,8 @@
 			children = (
 				520B66DA22AD0CC900252DB7 /* Model */,
 				520B66E522AD3A7300252DB7 /* View */,
+				520B66E822AD50FF00252DB7 /* Controller */,
 				520B66C822AD0CA100252DB7 /* AppDelegate.swift */,
-				520B66CA22AD0CA100252DB7 /* ViewController.swift */,
 				520B66CC22AD0CA100252DB7 /* Main.storyboard */,
 				520B66CF22AD0CA200252DB7 /* Assets.xcassets */,
 				520B66D122AD0CA200252DB7 /* LaunchScreen.storyboard */,
@@ -96,6 +96,14 @@
 				520B66E622AD3D0000252DB7 /* NewsTableViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		520B66E822AD50FF00252DB7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				520B66CA22AD0CA100252DB7 /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
