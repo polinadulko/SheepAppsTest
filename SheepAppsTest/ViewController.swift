@@ -9,12 +9,24 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let operationQueue = OperationQueue()
+        let getNewsOperation = GetNewsOperation()
+        getNewsOperation.completionBlock = {
+            if getNewsOperation.didFinishWithError == false, let news = getNewsOperation.news {
+                print(news)
+            } else {
+                let getNewsErrorText = "Error of loading news"
+                if let errorCode = getNewsOperation.errorCode {
+                    NSLog("%@ (code = %d)", getNewsErrorText, errorCode)
+                } else {
+                    NSLog(getNewsErrorText)
+                }
+            }
+        }
+        operationQueue.addOperation(getNewsOperation)
     }
-
-
 }
 

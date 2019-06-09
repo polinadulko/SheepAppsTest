@@ -8,6 +8,8 @@
 
 import UIKit
 
+let newsApiKey = "d505c94a1ddd4414a875559cfa9e0892"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

@@ -12,6 +12,11 @@
 		520B66CE22AD0CA100252DB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 520B66CC22AD0CA100252DB7 /* Main.storyboard */; };
 		520B66D022AD0CA200252DB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 520B66CF22AD0CA200252DB7 /* Assets.xcassets */; };
 		520B66D322AD0CA200252DB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 520B66D122AD0CA200252DB7 /* LaunchScreen.storyboard */; };
+		520B66DC22AD0CF400252DB7 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B66DB22AD0CF400252DB7 /* Article.swift */; };
+		520B66DE22AD13C400252DB7 /* Articles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B66DD22AD13C400252DB7 /* Articles.swift */; };
+		520B66E022AD159A00252DB7 /* AsynchronousOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B66DF22AD159A00252DB7 /* AsynchronousOperation.swift */; };
+		520B66E222AD16A100252DB7 /* GetNewsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B66E122AD16A100252DB7 /* GetNewsOperation.swift */; };
+		520B66E422AD1D2A00252DB7 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B66E322AD1D2A00252DB7 /* Status.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		520B66CF22AD0CA200252DB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		520B66D222AD0CA200252DB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		520B66D422AD0CA200252DB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		520B66DB22AD0CF400252DB7 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		520B66DD22AD13C400252DB7 /* Articles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Articles.swift; sourceTree = "<group>"; };
+		520B66DF22AD159A00252DB7 /* AsynchronousOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchronousOperation.swift; sourceTree = "<group>"; };
+		520B66E122AD16A100252DB7 /* GetNewsOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNewsOperation.swift; sourceTree = "<group>"; };
+		520B66E322AD1D2A00252DB7 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +64,7 @@
 		520B66C722AD0CA100252DB7 /* SheepAppsTest */ = {
 			isa = PBXGroup;
 			children = (
+				520B66DA22AD0CC900252DB7 /* Model */,
 				520B66C822AD0CA100252DB7 /* AppDelegate.swift */,
 				520B66CA22AD0CA100252DB7 /* ViewController.swift */,
 				520B66CC22AD0CA100252DB7 /* Main.storyboard */,
@@ -62,6 +73,18 @@
 				520B66D422AD0CA200252DB7 /* Info.plist */,
 			);
 			path = SheepAppsTest;
+			sourceTree = "<group>";
+		};
+		520B66DA22AD0CC900252DB7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				520B66E322AD1D2A00252DB7 /* Status.swift */,
+				520B66DB22AD0CF400252DB7 /* Article.swift */,
+				520B66DD22AD13C400252DB7 /* Articles.swift */,
+				520B66DF22AD159A00252DB7 /* AsynchronousOperation.swift */,
+				520B66E122AD16A100252DB7 /* GetNewsOperation.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +158,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				520B66DE22AD13C400252DB7 /* Articles.swift in Sources */,
+				520B66E222AD16A100252DB7 /* GetNewsOperation.swift in Sources */,
+				520B66E422AD1D2A00252DB7 /* Status.swift in Sources */,
 				520B66CB22AD0CA100252DB7 /* ViewController.swift in Sources */,
+				520B66E022AD159A00252DB7 /* AsynchronousOperation.swift in Sources */,
 				520B66C922AD0CA100252DB7 /* AppDelegate.swift in Sources */,
+				520B66DC22AD0CF400252DB7 /* Article.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
