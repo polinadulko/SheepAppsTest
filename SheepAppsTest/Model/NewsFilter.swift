@@ -18,7 +18,7 @@ class NewsFilter {
     func filterBySource(source: String) -> [Article] {
         var result = [Article]()
         for article in news {
-            if article.sourceName?.lowercased() == source.lowercased() {
+            if let sourceName = article.sourceName, sourceName.lowercased().contains(source.lowercased()) {
                 result.append(article)
             }
         }
