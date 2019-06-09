@@ -15,14 +15,26 @@ class ViewController: UIViewController {
     @IBOutlet weak var errorLabel: UILabel!
     let errorText = "Can't load news"
     let noInternetErrorCode = -1009
+    var initialNews: [Article]?
     var news: [Article]?
+    var newsFilter: NewsFilter?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        searchBar.delegate = self
         newsTableView.dataSource = self
         newsTableView.tableFooterView = UIView(frame: .zero)
         
+        let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(loadNews))
+        swipeGestureRecognizer.direction = .down
+        self.view.addGestureRecognizer(swipeGestureRecognizer)
+        self.view.isUserInteractionEnabled = true
+        
+        loadNews()
+    }
+    
+    @objc func loadNews() {
         let operationQueue = OperationQueue()
         operationQueue.qualityOfService = .utility
         let getNewsOperation = GetNewsOperation()
@@ -73,5 +85,43 @@ extension ViewController: UITableViewDataSource {
             cell.article = news[indexPath.row]
         }
         return cell
+    }
+}
+
+// MARK: - UISearchBarDelegate
+extension ViewController: UISearchBarDelegate {
+    func endNewsFiltering() {
+        searchBar.showsCancelButton = false
+        searchBar.text?.removeAll()
+        searchBar.resignFirstResponder()
+        news = initialNews
+        DispatchQueue.main.async {
+            self.newsTableView.reloadData()
+        }
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = true
+        if let news = news {
+            initialNews = news
+            newsFilter = NewsFilter(news: news)
+        }
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        endNewsFiltering()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        endNewsFiltering()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if let newsFilter = newsFilter {
+            self.news = newsFilter.filterBySource(source: searchText)
+            DispatchQueue.main.async {
+                self.newsTableView.reloadData()
+            }
+        }
     }
 }

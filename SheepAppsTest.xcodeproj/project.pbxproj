@@ -20,6 +20,7 @@
 		520B66E722AD3D0000252DB7 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B66E622AD3D0000252DB7 /* NewsTableViewCell.swift */; };
 		520B66EA22AD5F6F00252DB7 /* LoadImageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B66E922AD5F6F00252DB7 /* LoadImageOperation.swift */; };
 		520B66EC22AD642900252DB7 /* ImagesCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B66EB22AD642900252DB7 /* ImagesCache.swift */; };
+		520B66EE22AD70C800252DB7 /* NewsFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B66ED22AD70C800252DB7 /* NewsFilter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		520B66E622AD3D0000252DB7 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		520B66E922AD5F6F00252DB7 /* LoadImageOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadImageOperation.swift; sourceTree = "<group>"; };
 		520B66EB22AD642900252DB7 /* ImagesCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesCache.swift; sourceTree = "<group>"; };
+		520B66ED22AD70C800252DB7 /* NewsFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFilter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				520B66E122AD16A100252DB7 /* GetNewsOperation.swift */,
 				520B66E922AD5F6F00252DB7 /* LoadImageOperation.swift */,
 				520B66EB22AD642900252DB7 /* ImagesCache.swift */,
+				520B66ED22AD70C800252DB7 /* NewsFilter.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				520B66CB22AD0CA100252DB7 /* ViewController.swift in Sources */,
 				520B66E022AD159A00252DB7 /* AsynchronousOperation.swift in Sources */,
 				520B66C922AD0CA100252DB7 /* AppDelegate.swift in Sources */,
+				520B66EE22AD70C800252DB7 /* NewsFilter.swift in Sources */,
 				520B66EC22AD642900252DB7 /* ImagesCache.swift in Sources */,
 				520B66DC22AD0CF400252DB7 /* Article.swift in Sources */,
 			);
