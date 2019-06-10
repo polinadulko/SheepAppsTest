@@ -85,6 +85,16 @@ class ViewController: UIViewController {
             destination.article = selectedArticle
         }
     }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == contentSegueIdentifier, let news = news, let indexPathOfSelectedRow = newsTableView.indexPathForSelectedRow {
+            let article = news[indexPathOfSelectedRow.row]
+            if article.content != nil {
+                return true
+            }
+        }
+        return false
+    }
 }
 
 // MARK: - UITableViewDataSource

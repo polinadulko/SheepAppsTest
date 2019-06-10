@@ -11,6 +11,7 @@ import UIKit
 class ContentViewController: UIViewController {
     @IBOutlet var articleImageView: UIImageView!
     @IBOutlet weak var articleTextView: UITextView!
+    let hyperlinkRegexPattern = "\\[\\+[0-9]+ chars\\]"
     
     var article: Article? {
         didSet {
@@ -28,9 +29,25 @@ class ContentViewController: UIViewController {
     }
     
     func setArticleText() {
-        if let article = article, let content = article.content, let url = article.url {
-            articleTextView.text = content + "\n\n" + url
+        if let article = article, let content = article.content, let urlStr = article.url {
+            if let strToReplace = getTextToReplaceWithLink(text: content), let url = URL(string: urlStr) {
+                articleTextView.attributedText = NSAttributedString(string: content).replaceWithHyperink(substring: strToReplace, with: strToReplace, url: url)
+            } else {
+                articleTextView.text = content
+            }
+        } else {
+            articleTextView.text.removeAll()
         }
+    }
+    
+    func getTextToReplaceWithLink(text: String) -> String? {
+        do {
+            let regex = try NSRegularExpression(pattern: hyperlinkRegexPattern)
+            let results = regex.matches(in: text, options: [], range: NSRange(text.startIndex..., in: text))
+            let result = results.map { String(text[Range($0.range, in: text)!]) }.first
+            return result
+        } catch { }
+        return nil
     }
     
     func setArticleImage() {
