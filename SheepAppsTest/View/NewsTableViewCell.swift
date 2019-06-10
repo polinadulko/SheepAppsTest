@@ -31,6 +31,10 @@ class NewsTableViewCell: UITableViewCell {
                             self.previewImageView.image = image
                         }
                         ImagesCache.shared().setObject(image, forKey: urlToImage as AnyObject)
+                    } else {
+                        DispatchQueue.main.async {
+                            self.previewImageView.image = nil
+                        }
                     }
                 }
                 operationQueue.addOperation(loadImageOperation)

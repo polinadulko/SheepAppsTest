@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var newsTableView: UITableView!
     let newsCellReuseIdentifier = "NewsCell"
+    let contentSegueIdentifier = "ContentSegue"
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var errorLabel: UILabel!
     let errorText = "Can't load news"
@@ -32,6 +33,14 @@ class ViewController: UIViewController {
         self.view.isUserInteractionEnabled = true
         
         loadNews()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     @objc func loadNews() {
@@ -66,6 +75,14 @@ class ViewController: UIViewController {
             self.errorLabel.text = self.errorText + ". There is no Internet connection"
         } else {
             self.errorLabel.text = self.errorText
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == contentSegueIdentifier, let news = news, let indexPathOfSelectedRow = newsTableView.indexPathForSelectedRow {
+            let destination = segue.destination as! ContentViewController
+            let selectedArticle = news[indexPathOfSelectedRow.row]
+            destination.article = selectedArticle
         }
     }
 }

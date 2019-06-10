@@ -21,6 +21,7 @@
 		520B66EA22AD5F6F00252DB7 /* LoadImageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B66E922AD5F6F00252DB7 /* LoadImageOperation.swift */; };
 		520B66EC22AD642900252DB7 /* ImagesCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B66EB22AD642900252DB7 /* ImagesCache.swift */; };
 		520B66EE22AD70C800252DB7 /* NewsFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B66ED22AD70C800252DB7 /* NewsFilter.swift */; };
+		524AE68722AE595F00F8497A /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524AE68622AE595F00F8497A /* ContentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		520B66E922AD5F6F00252DB7 /* LoadImageOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadImageOperation.swift; sourceTree = "<group>"; };
 		520B66EB22AD642900252DB7 /* ImagesCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesCache.swift; sourceTree = "<group>"; };
 		520B66ED22AD70C800252DB7 /* NewsFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFilter.swift; sourceTree = "<group>"; };
+		524AE68622AE595F00F8497A /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				520B66CA22AD0CA100252DB7 /* ViewController.swift */,
+				524AE68622AE595F00F8497A /* ContentViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 				520B66DE22AD13C400252DB7 /* Articles.swift in Sources */,
 				520B66E222AD16A100252DB7 /* GetNewsOperation.swift in Sources */,
 				520B66E722AD3D0000252DB7 /* NewsTableViewCell.swift in Sources */,
+				524AE68722AE595F00F8497A /* ContentViewController.swift in Sources */,
 				520B66E422AD1D2A00252DB7 /* Status.swift in Sources */,
 				520B66CB22AD0CA100252DB7 /* ViewController.swift in Sources */,
 				520B66E022AD159A00252DB7 /* AsynchronousOperation.swift in Sources */,

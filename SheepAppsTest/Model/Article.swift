@@ -21,12 +21,14 @@ struct Article: Decodable {
     var title: String?
     var urlToImage: String?
     var content: String?
+    var url: String?
     
     enum CodingKeys: String, CodingKey {
         case source
         case title
         case urlToImage
         case content
+        case url
     }
     
     init(from decoder: Decoder) throws {
@@ -36,5 +38,6 @@ struct Article: Decodable {
         self.title = try? container.decode(String.self, forKey: .title)
         self.urlToImage = try? container.decode(String.self, forKey: .urlToImage)
         self.content = try? container.decode(String.self, forKey: .content)
+        self.url = try? container.decode(String.self, forKey: .url)
     }
 }
