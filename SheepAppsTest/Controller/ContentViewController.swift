@@ -31,7 +31,8 @@ class ContentViewController: UIViewController {
     func setArticleText() {
         if let article = article, let content = article.content, let urlStr = article.url {
             if let strToReplace = getTextToReplaceWithLink(text: content), let url = URL(string: urlStr) {
-                articleTextView.attributedText = NSAttributedString(string: content).replaceWithHyperink(substring: strToReplace, with: strToReplace, url: url)
+                let font = UIFont.systemFont(ofSize: 17.0)
+                articleTextView.attributedText = NSAttributedString(string: content, attributes: [NSAttributedString.Key.font: font]).replaceWithHyperink(substring: strToReplace, with: strToReplace, url: url, font: font)
             } else {
                 articleTextView.text = content
             }
