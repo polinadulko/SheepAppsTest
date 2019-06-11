@@ -49,7 +49,15 @@ class ViewController: UIViewController {
         let getNewsOperation = GetNewsOperation()
         getNewsOperation.completionBlock = {
             if getNewsOperation.didFinishWithError == false, let news = getNewsOperation.news {
-                self.news = news.articles
+                if var news = news.articles {
+                    news.removeAll(where: { (article) -> Bool in
+                        if article.title == nil || article.urlToImage == nil {
+                            return true
+                        }
+                        return false
+                    })
+                    self.news = news
+                }
                 DispatchQueue.main.async {
                     self.showTableWithNews()
                 }
